@@ -989,13 +989,13 @@ html {
   line-height: 44px;
   font-family: "SeasonMix-Regular";
   text-align: center;
-  text-align: center;
 }
 
 .leader-title {
   font-size: 22px;
   line-height: 44px;
   font-family: "SeasonSansTRIAL-Medium";
+  text-align: center;
 }
 
 .profile-ornament {
@@ -1163,6 +1163,480 @@ html {
 
 .absolute {
   position: absolute;
+  width: 100%;
   top: 285px;
   left: 0;
+}
+
+.absolute-2 {
+  position: absolute;
+  width: 100%;
+  top: 1077px;
+  left: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  overflow-x: clip;
+}
+
+@media (max-width: 1440px) {
+  .menu {
+    width: auto;
+    flex: 1;
+    min-width: 0;
+    padding: 0 20px;
+  }
+
+  .menu > ul {
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .header-box {
+    height: auto;
+    min-height: 500px;
+  }
+
+  .header-image {
+    height: 500px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .intro-right-box {
+    width: min(256px, 100%);
+    aspect-ratio: 1 / 1;
+    height: auto;
+  }
+
+  .climate-description p,
+  .research-description p {
+    width: auto;
+    height: auto;
+  }
+
+  .climate-description p {
+    margin: 56px clamp(24px, 4vw, 56px);
+  }
+
+  .apply-theme p,
+  .team-title p,
+  .mentor-header-box p,
+  .theme-box p,
+  .vision-title p,
+  .outcome-title p {
+    font-size: clamp(52px, 5vw, 72px);
+  }
+
+  .about,
+  .goals,
+  .mission,
+  .programme-image-one,
+  .programme-image-two,
+  .apply-image,
+  .application-box-one,
+  .application-box-two,
+  .application-box-three,
+  .application-box-four,
+  .outcome-box {
+    width: min(calc(100% - 40px), 100%);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about {
+    max-width: 520px;
+  }
+
+  .goals {
+    max-width: 484px;
+  }
+
+  .mission {
+    max-width: 508px;
+  }
+
+  .programme-image-one {
+    max-width: 272px;
+  }
+
+  .programme-image-two {
+    max-width: 432px;
+  }
+
+  .apply-image {
+    max-width: 1164px;
+    height: auto;
+    aspect-ratio: 1164 / 499;
+  }
+
+  .application-box-one,
+  .application-box-two,
+  .application-box-three,
+  .application-box-four {
+    max-width: 570px;
+  }
+
+  .outcome-box {
+    max-width: 334px;
+    height: auto;
+    min-height: 249px;
+  }
+
+  .image-card {
+    width: min(calc(100% - 24px), 600px);
+    max-width: 600px;
+    height: auto;
+    min-height: 670px;
+  }
+
+  .profile-box {
+    width: min(calc(100% - 40px), 306px);
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  .profile-box-edge {
+    width: calc(100% - 14px);
+    height: calc(100% - 14px);
+  }
+}
+
+@media (max-width: 1180px) {
+  #navbar {
+    position: sticky;
+    top: 0;
+    height: auto;
+  }
+
+  #banner {
+    height: auto;
+    flex-wrap: wrap;
+  }
+
+  .banner-textbox,
+  .lang-togglebox {
+    width: 100%;
+  }
+
+  .banner-textbox {
+    min-height: 40px;
+  }
+
+  .lang-togglebox {
+    min-height: 40px;
+    justify-content: flex-end;
+    padding: 0 20px 8px;
+    gap: 18px;
+  }
+
+  .lang-togglebox a {
+    margin-left: 0;
+  }
+
+  #navigation {
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 18px 20px 24px;
+  }
+
+  .menu {
+    order: 3;
+    width: 100%;
+    padding: 0;
+  }
+
+  .menu > ul {
+    justify-content: flex-start;
+  }
+
+  .school {
+    margin-right: 0;
+  }
+
+  .square {
+    display: none;
+  }
+
+  #header {
+    margin-top: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .header-image,
+  .header-box {
+    width: 100%;
+  }
+
+  .header-image {
+    height: auto;
+    min-height: 420px;
+  }
+
+  #intro {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .intro-info {
+    grid-column: 1 / -1;
+    border-right: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  }
+
+  .apply-box {
+    grid-column: 1 / -1;
+  }
+
+  #climate,
+  #programme-vision,
+  #research,
+  #programme-outcomes,
+  #who-can-apply,
+  #leader-area,
+  #team,
+  #rest-members,
+  #mentors {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    height: auto;
+  }
+
+  .programme-line-right,
+  .programme-line-left,
+  .outcome-line-left-box,
+  .graphic_ornament_programme_1,
+  .graphic_ornament_programme_2,
+  .team-ornament,
+  .mentor-line {
+    display: none;
+  }
+
+  .vision-title,
+  .research-theme,
+  .research-description,
+  .outcome-title,
+  .apply-theme,
+  .team-title,
+  .mentor-header {
+    grid-column: 1 / -1;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+  }
+
+  .vision-title,
+  .outcome-title,
+  .team-title {
+    padding: 24px 32px 16px;
+  }
+
+  .theme-box,
+  .mentor-header-box {
+    height: auto;
+    min-height: 0;
+    padding: 24px 32px 16px;
+  }
+
+  .theme-box {
+    margin-top: 0;
+    border-right: 0;
+  }
+
+  .apply-theme {
+    border-right: 0;
+  }
+
+  .apply-theme p {
+    width: auto;
+    height: auto;
+    margin: 24px 32px 16px;
+  }
+
+  .apply-image-description {
+    grid-column: 1 / -1;
+    border-right: 0;
+  }
+
+  .application-box-one,
+  .application-box-two,
+  .application-box-three,
+  .application-box-four {
+    margin-top: 48px;
+  }
+
+  .application-box-two img,
+  .application-box-three img {
+    display: none;
+  }
+
+  .application-form {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: calc(100% - 106px);
+    margin: 106px 0 0 106px;
+  }
+
+  #leader-area {
+    margin-top: 48px;
+    row-gap: 24px;
+    align-items: start;
+  }
+
+  #leader-area .profile-box,
+  #leader-area .profile-desc {
+    grid-column: 1 / 2;
+  }
+
+  .team-lead-bio,
+  .team-lead-bio-right {
+    grid-column: 2 / 3;
+    margin-top: 0;
+    padding: 0 20px 32px;
+  }
+
+  #team {
+    row-gap: 24px;
+    padding-bottom: 32px;
+  }
+
+  .member-box,
+  .member-box-2,
+  .team-member-bio-1,
+  .team-member-bio-2 {
+    grid-column: auto;
+    margin-top: 0;
+  }
+
+  #rest-members {
+    row-gap: 24px;
+    padding-bottom: 32px;
+  }
+
+  .member-box-3,
+  .member-box-4,
+  .member-box-5,
+  .member-box-6 {
+    grid-column: auto;
+    margin: 0 auto;
+    position: relative;
+    top: auto;
+    left: auto;
+  }
+
+  #mentors {
+    row-gap: 24px;
+    padding-bottom: 32px;
+  }
+
+  .absolute,
+  .absolute-2 {
+    position: static;
+  }
+}
+
+@media (max-width: 968px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #intro,
+  #climate,
+  #programme-vision,
+  #research,
+  #programme-outcomes,
+  #who-can-apply,
+  #leader-area,
+  #team,
+  #rest-members,
+  #mentors {
+    grid-template-columns: 1fr;
+  }
+
+  .intro-left-box,
+  .intro-right-box,
+  .programme-image-one,
+  .programme-image-two {
+    display: none;
+  }
+
+  .header-text,
+  .intro-info,
+  .climate-description p,
+  .research-description p,
+  .apply-image-description,
+  .team-lead-bio,
+  .team-lead-bio-right,
+  .team-member-bio-1,
+  .team-member-bio-2 {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .about,
+  .goals,
+  .mission,
+  .image-card,
+  .outcome-box,
+  .application-box-one,
+  .application-box-two,
+  .application-box-three,
+  .application-box-four,
+  .member-box,
+  .member-box-2,
+  .member-box-3,
+  .member-box-4,
+  .member-box-5,
+  .member-box-6 {
+    width: calc(100% - 24px);
+    max-width: none;
+  }
+
+  .about-text,
+  .goals-text,
+  .mission-text,
+  .title-card {
+    width: calc(100% - 24px);
+    max-width: 298px;
+  }
+
+  .application-form {
+    width: calc(100% - 40px);
+    margin: 106px 20px 0;
+  }
+
+  .team-title,
+  .vision-title,
+  .outcome-title,
+  .theme-box,
+  .mentor-header-box {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .leader-name {
+    font-size: 32px;
+    line-height: 1.1;
+  }
+
+  .leader-title,
+  .application-title,
+  .field {
+    line-height: 1.2;
+  }
+
+  .profile-desc,
+  .team-lead-bio,
+  .team-lead-bio-right,
+  .team-member-bio-1,
+  .team-member-bio-2 {
+    grid-column: 1 / -1;
+    margin: 0;
+  }
 }
