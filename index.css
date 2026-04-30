@@ -362,7 +362,7 @@ html {
   position: absolute;
   top: 0;
   pointer-events: none;
-  z-index: -1;
+  z-index: 0;
   left: 75%;
 }
 
@@ -456,7 +456,7 @@ html {
   width: 100%;
   object-fit: cover;
   object-position: center;
-  max-height: 1000px;
+  /* max-height: 1000px; */
   height: 100%;
 }
 
@@ -1872,6 +1872,16 @@ body {
   .menu ul li:not(:last-child) {
     margin-right: 20px;
   }
+
+  .intro_wrapper {
+    max-width: 45%;
+    padding: 75px 0;
+  }
+
+  .climate-description {
+    padding: 40px 90px;
+    align-content: flex-start;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -1905,6 +1915,19 @@ body {
 
   #intro {
     padding-bottom: 80px;
+  }
+
+  .intro_wrapper {
+    padding: 60px 0;
+  }
+
+  .intro-right-box,
+  .intro-left-box {
+    display: none;
+  }
+
+  .climate-description {
+    padding: 30px;
   }
 }
 
@@ -2020,5 +2043,29 @@ body {
 
   #intro {
     padding-bottom: 60px;
+  }
+
+  .intro_wrapper {
+    max-width: 60%;
+  }
+
+  .apply-box {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .intro_wrapper {
+      max-width: 100%;
+      width: 100%;
+      padding: 40px 20px;
+    }
+
+    #climate div {
+      width: 100%;
+    }
+
+    .climate-description {
+      width: 100%;
+    }
   }
 }
