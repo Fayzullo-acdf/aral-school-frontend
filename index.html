@@ -1267,7 +1267,7 @@
       <div class="bottom-layer"></div>
     </section>
   </body>
-  <script>
+  <script defer>
     window.addEventListener("scroll", function () {
       const navbar = document.getElementById("navbar");
 
@@ -1282,7 +1282,6 @@
     const menu = document.getElementById("mobile-menu");
     const faqItems = document.querySelectorAll(".faq-item");
     const modals = document.querySelectorAll(".modal");
-
     hamburger.addEventListener("click", () => {
       hamburger.classList.toggle("active");
       menu.classList.toggle("active");
@@ -1292,7 +1291,7 @@
       const trigger = modal.querySelector(".modal-text");
 
       trigger.addEventListener("click", () => {
-        modal.classList.toggle("active");
+        console.log("dfdfd");
       });
     });
 

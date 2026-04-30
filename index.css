@@ -538,6 +538,10 @@ html {
   object-position: center;
 }
 
+.modal {
+  position: relative;
+}
+
 .modal-text {
   position: absolute;
   bottom: 0;
@@ -548,7 +552,7 @@ html {
   width: 298px;
   height: 90px;
   background-color: #fff;
-  padding: 31px 0 31 31px;
+  padding: 31px 0 31px 31px;
   z-index: 0;
   cursor: pointer;
 }
@@ -563,34 +567,32 @@ html {
 }
 
 .modal-description {
-  max-height: 0;
-  overflow: hidden;
+  position: absolute;
+  background-color: #000;
+  color: #fff;
+  padding: 120px 100px 80px;
+  z-index: 1;
+  top: calc(100% - 90px);
+  width: 750px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .modal-description p {
-  padding: 0 24px;
   font-size: 16px;
   line-height: 24px;
 }
 
 .modal.active .modal-description {
-  position: absolute;
-  bottom: -400px;
-  right: 0;
-  max-height: 490px;
-  width: 710px;
-  background-color: #000;
-  color: #fff;
-  padding: 120px 100px 60px 92px;
-  z-index: 21;
+  visibility: visible;
+  z-index: 4;
+  opacity: 1;
+  pointer-events: all;
 }
 
 .modal.active .square-shape {
   background-color: #000;
-}
-
-.modal-description.active {
-  display: block;
 }
 
 .goals {
