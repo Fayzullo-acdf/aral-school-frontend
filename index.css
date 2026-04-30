@@ -4,9 +4,12 @@
   box-sizing: border-box;
 }
 
-body {
+body,
+html {
   background-color: #fcf4eb;
   position: relative;
+  scroll-behavior: smooth;
+  scroll-padding-top: 160px;
 }
 
 @font-face {
@@ -1257,7 +1260,7 @@ body {
 
 #rest-members {
   border-top: 1px solid #000;
-  padding-top: 30px;
+  padding: 30px 0;
 }
 
 .rest-memebers-wrapper {
@@ -1306,7 +1309,7 @@ body {
   border-top: 1px solid #000;
 }
 
-.decor__line {
+.mentor_ornament {
   position: absolute;
   left: 50%;
 }
@@ -1321,6 +1324,7 @@ body {
   position: relative;
   margin-bottom: 60px;
   font-family: "SeasonMix-Regular";
+  background-color: #fcf4eb;
 }
 
 .mentor-header::before {
@@ -1365,7 +1369,6 @@ body {
   align-items: flex-start;
   justify-content: space-between;
   flex-wrap: wrap;
-  flex: 0 0 auto;
   width: calc(50% - 10px);
 }
 
@@ -1375,7 +1378,6 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  align-items: center;
 }
 
 .image {
@@ -1459,7 +1461,7 @@ body {
   grid-template-columns: repeat(2, 1fr);
   border: 1px solid #fff;
   background-color: #000;
-  z-index: 1;
+  z-index: 0;
   min-height: 960px;
   margin-top: 200px;
 }
@@ -1502,9 +1504,6 @@ body {
   padding: 28px 0;
   cursor: pointer;
   border-bottom: 1px solid #000;
-}
-
-.faq-question p {
   font-family: "SeasonSansTRIAL-Bold";
 }
 
@@ -1513,12 +1512,10 @@ body {
   overflow: hidden;
   padding: 28px 0;
   display: none;
-}
-
-.faq-answer p {
   padding: 0 0 20px 0;
   font-size: 16px;
   line-height: 24px;
+  font-family: "SeasonSansTRIAL-Medium";
 }
 
 .faq-item.active .faq-answer {
@@ -1589,6 +1586,7 @@ body {
   margin-top: 150px;
   position: relative;
   height: 1508px;
+  z-index: 0;
 }
 
 #about img {
@@ -1615,9 +1613,9 @@ body {
   height: 220px;
   border-bottom: 1px solid #000;
   padding: 25px 21px 8px 51px;
-}
-
-.about-title p {
+  position: relative;
+  z-index: 1;
+  background-color: #fcf4eb;
   font-size: 72px;
   line-height: 100%;
   font-family: "SeasonMix-Regular";
@@ -1666,6 +1664,7 @@ body {
   width: 100%;
   height: 47px;
   border-bottom: 1px solid #000;
+  background-color: #fcf4eb;
 }
 
 .bottom-layer {
@@ -1675,6 +1674,7 @@ body {
   width: 100%;
   height: 47px;
   border-top: 1px solid #000;
+  background-color: #fcf4eb;
 }
 
 .logo-footer {
@@ -1683,6 +1683,10 @@ body {
   height: 120px;
   padding: 0 20px;
   margin-top: 401px;
+}
+
+.logo-footer img {
+  height: 45px;
 }
 
 #footer-school {
@@ -1704,11 +1708,12 @@ body {
 
 .contact {
   grid-column: 1/2;
-  width: 326px;
-  height: 234px;
+  width: calc(100% - 10px);
   padding: 0 20px;
   position: absolute;
   top: 132px;
+  left: 20px;
+  line-height: normal;
 }
 
 .footer-title {
@@ -1724,8 +1729,11 @@ body {
   position: absolute;
   height: 120px;
   grid-column: 2/3;
+  width: calc(100% - 10px);
+  padding: 0 20px;
   top: 132px;
   left: 18px;
+  line-height: normal;
 }
 
 .social-media a {
@@ -1739,6 +1747,7 @@ body {
   padding: 85px 28px 46px 59px;
   border-bottom: 1px solid #000;
   margin-top: 47px;
+  background-color: #fcf4eb;
 }
 
 .email-form input {
@@ -1755,6 +1764,7 @@ body {
   height: 68px;
   position: relative;
   margin-top: 42px;
+  overflow: hidden;
 }
 
 .form button {
@@ -1766,6 +1776,7 @@ body {
   border: none;
   font-family: "SeasonSansTRIAL-Medium";
   font-size: 16px;
+  height: 100%;
 }
 
 .form button:hover {
@@ -1816,6 +1827,7 @@ body {
   width: fit-content;
   grid-column: 4/5;
   z-index: 2;
+  line-height: normal;
 }
 
 .privacy ul li a {
