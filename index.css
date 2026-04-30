@@ -110,7 +110,7 @@ body {
   top: 0;
   left: 0;
   height: 156px;
-  z-index: 100;
+  z-index: 1;
   transition: all 0.3s ease;
 }
 
@@ -139,7 +139,11 @@ body {
   padding: 10px 20px;
 }
 
-ul {
+.menu ul {
+  list-style: none;
+}
+
+.lang-togglebox ul {
   list-style: none;
 }
 
@@ -424,6 +428,7 @@ ul {
   width: 21px;
   height: 21px;
   margin-right: 33px;
+  z-index: 0;
 }
 
 #climate {
@@ -667,53 +672,61 @@ ul {
 }
 
 #research {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  position: relative;
-  z-index: 1;
   border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  padding-bottom: 50px;
 }
 
 .research-theme {
-  grid-column: 1/2;
-  height: 420px;
-}
-.research-description {
-  grid-column: 2/2;
-  height: 420px;
-}
-
-.research-description p {
-  max-width: 745px;
-  font-size: 16px;
-  font-family: "SeasonSansTRIAL-Medium";
-  line-height: 24px;
-  padding: 36px 75px 0 114px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .theme-box {
-  display: flex;
-  align-items: center;
-  height: 220px;
-  margin-top: 30px;
-  padding-left: 30px;
-  border-bottom: 1px solid #000;
-  border-right: 1px solid rgba(0, 0, 0, 0.5);
+  width: calc(50% - 10px);
+  font-size: 72px;
+  font-weight: 420;
+  background-color: #fcf4eb;
+  padding: 25px 21px 25px 50px;
+  position: relative;
+  font-family: "SeasonMix-Regular";
 }
 
-.theme-box p {
-  font-size: 72px;
-  font-family: "SeasonMix-Regular";
-  line-height: 100%;
+.theme-box::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  background-color: #000;
+  height: 1px;
+  width: calc(100% + 30px);
+  left: -20px;
+}
+
+.research-description {
+  font-size: 16px;
+  line-height: 24px;
+  padding: 25px 120px 165px;
+  width: calc(50% - 10px);
+  background-color: #fcf4eb;
+  font-family: "SeasonSansTRIAL-Medium";
+  z-index: 2;
+}
+
+.research-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .theme-card-left {
-  grid-column: 1/2;
-  position: relative;
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   flex-direction: column;
-  padding-right: 12px;
+  padding-left: 100px;
+  width: calc(50% - 10px);
 }
 
 .image-card {
@@ -739,19 +752,16 @@ ul {
 .title-card {
   position: absolute;
   top: 230px;
-  left: 20px;
+  left: -102px;
   background-color: #f96243;
   width: 345px;
   height: 158px;
   display: flex;
   align-items: center;
   padding: 45px 53px 45px 41px;
-}
-
-.title-card p {
   font-size: 30px;
   line-height: 100%;
-  font-family: "SeasonSansTRIAL-Medium";
+  font-family: "SeasonSansTRIAL-Regular";
 }
 
 .number {
@@ -765,51 +775,29 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.number p {
   font-size: 30px;
   font-family: "SeasonSansTRIAL-Light";
 }
 
 .theme-card-right {
-  grid-column: 2/2;
   position: relative;
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   flex-direction: column;
   padding-right: 12px;
 }
 
 #programme-outcomes {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
   position: relative;
-  border-top: 1px solid #000;
-  margin-top: 45px;
+  border-bottom: 1px solid #000;
 }
 
 .outcome-title {
-  grid-column: 3/5;
-  padding: 25px 81px 16px 51px;
-  border-bottom: 1px solid #000;
+  width: 50%;
+  margin-left: auto;
+  padding: 25px 21px 24px 51px;
   position: relative;
-}
-
-.graphic_ornament_programme_1 {
-  position: absolute;
-  bottom: -136px;
-  left: -117px;
-  width: 117px;
-  height: 136px;
-}
-
-.graphic_ornament_programme_2 {
-  position: absolute;
-  bottom: -171px;
-  left: 0;
-  width: 152px;
-  height: 171px;
+  background-color: #fcf4eb;
 }
 
 .outcome-title p {
@@ -818,126 +806,167 @@ ul {
   font-family: "SeasonMix-Regular";
 }
 
-.outcome-line-left-box {
-  grid-column: 1/2;
+.outcome-title::before {
+  content: "";
   position: absolute;
-  top: 0;
-  right: 0;
-  border-right: 1px solid rgba(0, 0, 0, 0.5);
-  width: 326px;
-}
-
-.outcome-line-left-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.outcome-line-left {
-  grid-column: 1/2;
-  position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 0;
+  width: calc(100% + 20px);
+  height: 1px;
+  background-color: #000;
+}
+
+.outcomes_wrapper {
+  position: relative;
+  padding: 200px 0 150px;
+  display: flex;
+  align-items: stretch;
+  align-content: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.graphic_ornament_programme_1 {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 58px);
+  transform: translateX(-50%);
+}
+
+.graphic_ornament_programme_2 {
+  position: absolute;
+  top: 0;
+  left: 50%;
+}
+
+.outcome-line-left-box {
+  position: absolute;
+  left: calc(25% - 347px);
 }
 
 .outcome-box {
   background-color: #000;
   color: white;
   padding: 43px 27px 68px 31px;
-  width: min(calc(100% - 24px), 334px);
+  width: calc(25% - 24px);
   height: 249px;
-  margin: 210 auto 155px auto;
   font-family: "SeasonSansTRIAL-Medium";
+  font-size: 16px;
+  line-height: 22px;
 }
 
 #who-can-apply {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  position: relative;
-  z-index: 1;
-  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  padding-bottom: 0;
 }
 
 .apply-theme {
-  grid-column: 1/3;
-  border-right: 1px solid rgba(0, 0, 0, 0.5);
-  border-bottom: 1px solid #000;
+  width: calc(50% - 10px);
   padding: 25px 81px 8px 51px;
   height: 218px;
-}
-
-.apply-theme p {
+  background-color: #fcf4eb;
   font-size: 72px;
   line-height: 100%;
   font-family: "SeasonMix-Regular";
+  position: relative;
+}
+
+.apply-theme::before {
+  content: "";
+  position: absolute;
+  height: 1px;
+  background-color: #000;
+  width: calc(100% + 50px);
+  bottom: 0;
+  left: -40px;
+}
+
+.apply-wrapper {
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
 }
 
 .apply-image {
-  grid-column: 1/5;
-  width: min(calc(100% - 40px), 1164px);
-  height: 499px;
-  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .apply-image img {
   width: 100%;
-  height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .apply-image-description {
-  grid-column: 2/4;
+  width: 60%;
+  margin: 0 auto;
+  background-color: #fcf4eb;
   padding: 30px 26px;
-  border-right: 1px solid rgba(0, 0, 0, 0.5);
-}
-
-.apply-image-description p {
   font-size: 16px;
   line-height: 24px;
   font-family: "SeasonSansTRIAL-Medium";
 }
 
+.apply-box-2 {
+  width: calc(50% + 20px);
+  position: relative;
+  margin-left: auto;
+  background-color: #f96243;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px 0;
+  right: -20px;
+}
+
+.application-wrapper {
+  height: 1800px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 148px;
+  position: relative;
+}
+
 .application-box-one {
-  grid-column: 1/3;
   background-color: #fff;
   width: min(calc(100% - 24px), 570px);
   height: fit-content;
-  position: relative;
-  margin: 148px auto 0 auto;
+  position: absolute;
   padding-bottom: 72px;
+  top: 0;
+  left: 0;
 }
 
 .application-box-two {
-  grid-column: 3/5;
   background-color: #fff;
   width: min(calc(100% - 24px), 570px);
   height: fit-content;
-  position: relative;
-  margin: 391px auto 0 auto;
+  position: absolute;
+  top: 391px;
+  right: 0;
   padding-bottom: 72px;
 }
 
 .application-box-three {
-  grid-column: 1/3;
   background-color: #fff;
   width: min(calc(100% - 24px), 570px);
   height: fit-content;
-  position: relative;
-  margin: 114px auto 0 auto;
+  position: absolute;
+  left: 0;
+  top: 824px;
   padding-bottom: 72px;
 }
 
 .application-box-four {
-  grid-column: 3/5;
   background-color: #fff;
   width: min(calc(100% - 24px), 570px);
   height: fit-content;
-  position: relative;
-  margin: 302px auto 0 auto;
+  position: absolute;
+  right: 0;
+  top: 1012px;
   padding-bottom: 72px;
 }
 
