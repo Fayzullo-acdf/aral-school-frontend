@@ -588,11 +588,15 @@ html {
   color: #fff;
   padding: 120px 100px 80px;
   z-index: 1;
-  top: calc(100% - 90px);
-  width: 750px;
+  top: 0;
+  right: 0;
+  max-width: 750px;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease;
 }
 
 .modal-description p {
@@ -1526,27 +1530,33 @@ html {
   cursor: pointer;
   border-bottom: 1px solid #000;
   font-family: "SeasonSansTRIAL-Bold";
+  position: relative;
 }
 
 .faq-answer {
   max-height: 0;
   overflow: hidden;
-  padding: 28px 0;
-  display: none;
-  padding: 0 0 20px 0;
+  padding: 0;
   font-size: 16px;
   line-height: 24px;
   font-family: "SeasonSansTRIAL-Medium";
+  transition: max-height 0.25s ease;
+}
+
+.faq-answer p {
+  padding: 0 0 24px;
 }
 
 .faq-item.active .faq-answer {
-  display: block;
-  max-height: 200px;
+  max-height: 240px;
   background-color: #fff;
+  margin-top: 30px;
 }
 
 .faq-item.active .faq-question {
   width: 100%;
+  border-bottom: 0;
+  padding-bottom: 16px;
 }
 
 .faq-item.active {

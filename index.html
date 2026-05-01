@@ -1326,7 +1326,11 @@
       const trigger = modal.querySelector(".modal-text");
 
       trigger.addEventListener("click", () => {
-        console.log("dfdfd");
+        modals.forEach((item) => {
+          if (item !== modal) item.classList.remove("active");
+        });
+
+        modal.classList.toggle("active");
       });
     });
 
