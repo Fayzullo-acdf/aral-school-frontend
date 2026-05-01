@@ -114,7 +114,7 @@ html {
   top: 0;
   left: 0;
   height: 156px;
-  z-index: 1;
+  z-index: 10;
   transition: all 0.3s ease;
 }
 
@@ -122,6 +122,13 @@ html {
   background: rgba(252, 244, 235, 0.55);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
+}
+
+#navbar.mobile-menu-open,
+#navbar.mobile-menu-open.scrolled {
+  background: #fcf4eb;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 .banner {
@@ -276,6 +283,14 @@ html {
   background-color: #f96243;
   margin: auto;
   inset: 0;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.hamburger_button.active .hamburger_rect::before {
+  background-color: #f96243;
+  transform: scale(0.85);
 }
 
 .square {
@@ -2185,6 +2200,63 @@ body {
     height: 34px;
   }
 
+  #mobile-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: calc(100dvh - 156px);
+    overflow-y: auto;
+    background: rgba(252, 244, 235, 0.5);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    padding: 40px 30px 80px 55px;
+  }
+
+  #navbar.mobile-menu-open #mobile-menu,
+  #navbar.mobile-menu-open.scrolled #mobile-menu {
+    background: rgba(252, 244, 235, 0.5);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+  }
+
+  #mobile-menu.active {
+    display: block;
+  }
+
+  #mobile-menu ul {
+    list-style: none;
+  }
+
+  #mobile-menu li:not(:last-child) {
+    margin-bottom: 18px;
+  }
+
+  #mobile-menu ul li a {
+    color: #000;
+    font-family: "SeasonSansTRIAL-Regular";
+    font-size: 30px;
+    line-height: normal;
+    text-decoration: none;
+  }
+
+  .mobile-lang-togglebox {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    margin-top: 68px;
+  }
+
+  .mobile-lang-togglebox a {
+    font-size: 16px;
+    text-decoration: none;
+    color: #000;
+    font-family: "SeasonSansTRIAL-Regular";
+    margin-right: 32px;
+  }
+
   .square {
     display: none;
   }
@@ -2229,6 +2301,9 @@ body {
 
   #intro {
     padding-bottom: 60px;
+    height: auto;
+    position: relative;
+    background-color: #fcf4eb;
   }
 
   .intro_wrapper {
@@ -2237,6 +2312,21 @@ body {
 
   .apply-box {
     display: none;
+  }
+
+  .outcome-title {
+    width: 100%;
+    height: auto;
+    padding-left: 10px;
+  }
+
+  .outcome-title p {
+    font-size: 48px;
+  }
+
+  .outcome-title::before {
+    left: -20px;
+    width: calc(100% + 50px);
   }
 
   .vision-title {

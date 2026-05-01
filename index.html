@@ -52,7 +52,14 @@
               <div class="school">
                 <a href="#"> <img src="./logo/SCHOOL.svg" alt="school" /></a>
               </div>
-              <div class="hamburger_button">
+              <div
+                class="hamburger_button"
+                id="hamburger"
+                role="button"
+                tabindex="0"
+                aria-controls="mobile-menu"
+                aria-expanded="false"
+              >
                 <div class="hamburger_rect"></div>
               </div>
             </div>
@@ -64,11 +71,11 @@
         <div id="mobile-menu">
           <ul>
             <li><a href="#">Aral School</a></li>
-            <li><a href="#">Programme</a></li>
-            <li><a href="#">Apply</a></li>
-            <li><a href="#">Team</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">About ACDF</a></li>
+            <li><a href="#programme-vision">Programme</a></li>
+            <li><a href="#who-can-apply">Apply</a></li>
+            <li><a href="#leader-area">Team</a></li>
+            <li><a href="#FAQ">FAQ</a></li>
+            <li><a href="#about">About ACDF</a></li>
             <li><a href="#">Aral Culture Summit</a></li>
           </ul>
 
@@ -1283,12 +1290,37 @@
 
     const hamburger = document.getElementById("hamburger");
     const menu = document.getElementById("mobile-menu");
+    const navbar = document.getElementById("navbar");
     const faqItems = document.querySelectorAll(".faq-item");
     const modals = document.querySelectorAll(".modal");
-    hamburger.addEventListener("click", () => {
-      hamburger.classList.toggle("active");
-      menu.classList.toggle("active");
-    });
+
+    if (hamburger && menu) {
+      const closeMobileMenu = () => {
+        hamburger.classList.remove("active");
+        menu.classList.remove("active");
+        navbar?.classList.remove("mobile-menu-open");
+        hamburger.setAttribute("aria-expanded", "false");
+      };
+
+      const toggleMobileMenu = () => {
+        const isOpen = hamburger.classList.toggle("active");
+        menu.classList.toggle("active", isOpen);
+        navbar?.classList.toggle("mobile-menu-open", isOpen);
+        hamburger.setAttribute("aria-expanded", String(isOpen));
+      };
+
+      hamburger.addEventListener("click", toggleMobileMenu);
+      hamburger.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          toggleMobileMenu();
+        }
+      });
+
+      menu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", closeMobileMenu);
+      });
+    }
 
     modals.forEach((modal) => {
       const trigger = modal.querySelector(".modal-text");
