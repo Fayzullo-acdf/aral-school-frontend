@@ -1294,6 +1294,9 @@
     const navbar = document.getElementById("navbar");
     const faqItems = document.querySelectorAll(".faq-item");
     const modals = document.querySelectorAll(".modal");
+    const languageLinks = document.querySelectorAll(
+      ".lang-togglebox a, .mobile-lang-togglebox a"
+    );
 
     if (hamburger && menu) {
       const closeMobileMenu = () => {
@@ -1318,10 +1321,25 @@
         }
       });
 
-      menu.querySelectorAll("a").forEach((link) => {
+      menu.querySelectorAll("ul a").forEach((link) => {
         link.addEventListener("click", closeMobileMenu);
       });
     }
+
+    languageLinks.forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        const selectedLanguage = link.textContent.trim();
+
+        languageLinks.forEach((item) => {
+          item.classList.toggle(
+            "selected",
+            item.textContent.trim() === selectedLanguage
+          );
+        });
+      });
+    });
 
     modals.forEach((modal) => {
       const trigger = modal.querySelector(".modal-text");
