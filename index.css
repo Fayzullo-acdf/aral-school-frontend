@@ -606,7 +606,6 @@ html {
 
 .modal.active .modal-description {
   visibility: visible;
-  z-index: 4;
   opacity: 1;
   pointer-events: all;
 }
@@ -2366,15 +2365,36 @@ body {
   }
 
   .modal-text {
+    position: relative;
     width: 90%;
     height: 75px;
     left: 0;
     right: 0;
-    margin: 0 auto;
+    bottom: auto;
+    margin: -75px auto 0;
+    z-index: 0;
   }
 
   .modal-text p {
     font-size: 16px;
+  }
+
+  .modal-description {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 90%;
+    max-width: none;
+    max-height: 0;
+    margin: 0 auto;
+    padding: 0 24px;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .modal.active .modal-description {
+    max-height: 2000px;
+    padding: 32px 24px;
   }
 
   .goals {
