@@ -2834,7 +2834,17 @@ body {
     }
 
     #who-can-apply {
-      padding-bottom: 80px;
+      padding-bottom: 60px;
+    }
+
+    .application-content ul,
+    ol {
+      margin: 160px 10px auto 34px;
+    }
+
+    .application-content p {
+      margin: 160px 10px auto 34px;
+      background-color: aqua;
     }
 
     #leader-area {
