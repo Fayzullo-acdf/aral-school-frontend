@@ -1893,6 +1893,11 @@ body {
   overflow-x: clip;
 }
 
+html.mobile-menu-lock,
+body.mobile-menu-lock {
+  overflow: hidden;
+}
+
 @media (max-width: 1400px) {
   .aral {
     width: 120px;
@@ -2844,7 +2849,6 @@ body {
 
     .application-content p {
       margin: 160px 10px auto 34px;
-      background-color: aqua;
     }
 
     #leader-area {
