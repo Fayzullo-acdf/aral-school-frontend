@@ -855,7 +855,7 @@
           </svg>
         </div>
         <h2 class="mentor-header">
-          <p>Mentors & <br />Experts</p>
+          <p>Mentors & Experts</p>
         </h2>
         <div class="mentors_category">
           <div class="category_item">Water</div>
@@ -1295,7 +1295,7 @@
     const faqItems = document.querySelectorAll(".faq-item");
     const modals = document.querySelectorAll(".modal");
     const languageLinks = document.querySelectorAll(
-      ".lang-togglebox a, .mobile-lang-togglebox a"
+      ".lang-togglebox a, .mobile-lang-togglebox a",
     );
 
     if (hamburger && menu) {
@@ -1335,7 +1335,7 @@
         languageLinks.forEach((item) => {
           item.classList.toggle(
             "selected",
-            item.textContent.trim() === selectedLanguage
+            item.textContent.trim() === selectedLanguage,
           );
         });
       });
