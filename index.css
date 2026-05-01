@@ -1500,6 +1500,7 @@ html {
 }
 
 .faq-box {
+  --faq-question-height: 112px;
   position: absolute;
   width: 80%;
   background-color: #fcf4eb;
@@ -1518,6 +1519,7 @@ html {
 .faq-item {
   display: flex;
   flex-direction: column;
+  min-height: var(--faq-question-height);
   padding: 0 48px;
 }
 
@@ -1525,11 +1527,16 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 28px 0;
+  min-height: var(--faq-question-height);
+  padding: 0;
   cursor: pointer;
   border-bottom: 1px solid #000;
   font-family: "SeasonSansTRIAL-Bold";
   position: relative;
+}
+
+.faq-question p {
+  line-height: 1.2;
 }
 
 .faq-answer {
@@ -1555,7 +1562,6 @@ html {
 .faq-item.active .faq-question {
   width: 100%;
   border-bottom: 0;
-  padding-bottom: 16px;
 }
 
 .faq-item.active {
@@ -2908,12 +2914,17 @@ body {
 
     #FAQ {
       margin-top: 0;
-      min-height: 1300px;
+      min-height: 1800px;
     }
 
     .faq-box {
+      --faq-question-height: 144px;
       display: block;
       width: 90%;
+    }
+
+    .faq-item {
+      padding: 0 24px;
     }
 
     .faq-listbox {
