@@ -3059,9 +3059,43 @@ body.mobile-menu-lock {
       padding-bottom: 48px;
     }
 
+    #footer {
+      grid-template-rows: 10.7vw 38.6vw auto 52vw 74.2vw 18.5vw;
+    }
+
     #footer .contact,
     #footer .social-media {
+      grid-row: 3;
       padding: 40px 20px;
+    }
+
+    #footer .social-media {
+      border-left: 1px solid #000;
+    }
+
+    #footer .logo-footer {
+      grid-row: 4;
+    }
+
+    #footer #footer-aral {
+      bottom: 28vw;
+      height: 36px;
+      width: 86px;
+      margin-left: 20px;
+    }
+
+    #footer #footer-school {
+      bottom: 10vw;
+      height: 36px;
+      margin-right: 20px;
+    }
+
+    #footer .footer-overlay {
+      grid-row: 5;
+    }
+
+    #footer .bottom-layer {
+      grid-row: 6;
     }
 
     #footer .contact,
