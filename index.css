@@ -1660,7 +1660,6 @@ html {
 .about-left {
   position: absolute;
   width: 358px;
-  height: 358px;
   background-color: #fff;
   top: 286px;
   left: 190px;
@@ -1923,6 +1922,14 @@ body.mobile-menu-lock {
   .intro-info {
     font-size: 28px;
   }
+
+  .about-left {
+    left: 8%;
+  }
+
+  .about-right {
+    right: 5%;
+  }
 }
 
 @media (max-width: 1600px) {
@@ -2031,6 +2038,10 @@ body.mobile-menu-lock {
 
   .modal-text p {
     font-size: 18px;
+  }
+
+  .modal-description {
+    padding: 30px 40px;
   }
 
   .goals {
@@ -2149,6 +2160,27 @@ body.mobile-menu-lock {
   .name {
     font-size: 28px;
     padding-left: 20px;
+  }
+
+  .about-title {
+    font-size: 56px;
+    height: 160px;
+  }
+
+  .about-left {
+    left: 10%;
+    max-width: 330px;
+    font-size: 24px;
+  }
+
+  .about-right {
+    right: 0;
+    max-width: 480px;
+  }
+
+  .programme-line-left,
+  .programme-line-right {
+    display: none;
   }
 }
 
@@ -2583,6 +2615,30 @@ body.mobile-menu-lock {
     font-size: 48px;
   }
 
+  .about-title {
+    grid-column: 1/3;
+    height: fit-content;
+    padding: 30px;
+    border-top: 1px solid #000;
+  }
+
+  .about-left {
+    top: 200px;
+    left: 50%;
+    transform: translate(-50%);
+    max-width: 400px;
+    height: auto;
+    padding: 20px;
+  }
+
+  .about-right {
+    width: 100%;
+    top: 450px;
+    right: 50%;
+    transform: translate(50%);
+    padding: 30px;
+  }
+
   #footer {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2955,30 +3011,6 @@ body.mobile-menu-lock {
     #about img {
       display: none;
     }
-
-    .about-title {
-      grid-column: 1/3;
-      height: fit-content;
-      padding: 30px;
-      border-top: 1px solid #000;
-    }
-
-    .about-left {
-      top: 200px;
-      left: 50%;
-      transform: translate(-50%);
-      width: 100%;
-      height: auto;
-      padding: 20px;
-    }
-
-    .about-right {
-      width: 100%;
-      top: 400px;
-      right: 50%;
-      transform: translate(50%);
-      padding: 20px;
-    }
   }
 
   @media (max-width: 576px) {
@@ -3057,11 +3089,6 @@ body.mobile-menu-lock {
     .about-right {
       top: 500px;
       padding-bottom: 48px;
-    }
-
-    .programme-line-left,
-    .programme-line-right {
-      display: none;
     }
 
     #footer {
