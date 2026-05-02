@@ -3059,6 +3059,11 @@ body.mobile-menu-lock {
       padding-bottom: 48px;
     }
 
+    .programme-line-left,
+    .programme-line-right {
+      display: none;
+    }
+
     #footer {
       grid-template-rows: 10.7vw 38.6vw auto 52vw 74.2vw 18.5vw;
     }
