@@ -2553,6 +2553,7 @@ body.mobile-menu-lock {
     width: 100%;
     height: auto;
     padding: 30px 0;
+    font-size: 48px;
   }
 
   .category_item {
@@ -2577,8 +2578,9 @@ body.mobile-menu-lock {
     padding-left: 0;
   }
 
-  .about-title {
-    font-size: 64px;
+  .about-title,
+  .faq-title {
+    font-size: 48px;
   }
 
   #footer {
@@ -2976,6 +2978,95 @@ body.mobile-menu-lock {
       right: 50%;
       transform: translate(50%);
       padding: 20px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    #intro {
+      padding: 0;
+    }
+
+    .title-card {
+      font-size: 18px;
+      width: 90%;
+      height: fit-content;
+      padding: 20px 40px;
+      top: 312px;
+    }
+
+    .image-card p {
+      padding: 20px;
+    }
+
+    .outcomes_wrapper {
+      display: block;
+    }
+
+    .outcome-box,
+    .apply-wrapper,
+    .apply-image-description {
+      width: 100%;
+    }
+
+    .apply-image-description {
+      padding: 25px 0;
+    }
+
+    #who-can-apply {
+      padding-bottom: 320px;
+    }
+    .application-form {
+      left: 0;
+      width: 100%;
+    }
+
+    .application-form svg {
+      width: 32px;
+    }
+
+    .application-content-form ol {
+      margin: 32px 44px;
+    }
+
+    .note {
+      margin: 238px 44px auto 44px;
+    }
+
+    .application-note {
+      margin: 32px 44px;
+    }
+
+    .leader-wrapper {
+      display: flex;
+      padding: 32px 0;
+    }
+
+    .mentors_grid {
+      padding: 0 10px;
+    }
+
+    .name,
+    .mentors_content {
+      padding: 0;
+    }
+
+    #about {
+      height: 1700px;
+    }
+
+    .about-right {
+      top: 500px;
+      padding-bottom: 48px;
+    }
+
+    #footer .contact,
+    #footer .social-media {
+      padding: 40px 20px;
+    }
+
+    #footer .contact,
+    #footer .footer-title p {
+      font-size: 16px;
     }
   }
 }
