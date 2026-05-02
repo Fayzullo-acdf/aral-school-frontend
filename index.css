@@ -1930,6 +1930,10 @@ body.mobile-menu-lock {
   .about-right {
     right: 5%;
   }
+
+  .intro-left-box svg {
+    width: 280px;
+  }
 }
 
 @media (max-width: 1600px) {
@@ -2052,8 +2056,6 @@ body.mobile-menu-lock {
   .mission {
     width: 38%;
     height: auto;
-    left: 25%;
-    transform: translate(-50%);
   }
 
   .programme-image-two {
