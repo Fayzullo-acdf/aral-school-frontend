@@ -1278,9 +1278,11 @@ html {
 
 .member-image-box {
   width: calc(50% - 10px);
+  max-width: 336px;
   display: flex;
   flex-direction: column;
   padding: 0 12px;
+  margin: 0 auto;
 }
 
 #rest-members {
