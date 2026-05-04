@@ -312,6 +312,18 @@ html {
   margin: auto;
 }
 
+.square-about {
+  position: absolute;
+  background-color: #000;
+  z-index: 1;
+  width: 21px;
+  height: 21px;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin: auto;
+}
+
 #hero {
   padding-top: 205px;
   padding-bottom: 50px;
@@ -1624,69 +1636,70 @@ html {
 }
 
 #about {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  margin-top: 150px;
   position: relative;
-  height: 1508px;
-  z-index: 0;
+  margin-top: 147px;
 }
 
-#about img {
-  position: absolute;
-  grid-column: 2/2;
-  z-index: 2;
-  top: -18px;
-  left: -286px;
-}
-
-.about-box {
-  position: absolute;
-  left: 5%;
-  grid-column: 1/3;
-  width: 90%;
-  height: 875px;
-  background-image: url("./gallery/about_bg-img.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+.about-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .about-title {
-  grid-column: 2/2;
-  height: 220px;
-  border-bottom: 1px solid #000;
-  padding: 25px 21px 8px 51px;
-  position: relative;
-  z-index: 1;
+  width: 50%;
+  margin-left: auto;
+  margin-bottom: 64px;
+  padding: 25px 21px 100px 51px;
   background-color: #fcf4eb;
   font-size: 72px;
   line-height: 100%;
   font-family: "SeasonMix-Regular";
 }
 
+.about-box {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-left: 190px;
+  padding-right: 80px;
+}
+
 .about-left {
-  position: absolute;
-  width: 358px;
+  width: calc(50% - 80px);
   background-color: #fff;
-  top: 286px;
-  left: 190px;
   padding: 42px 18px 104px 35px;
-  z-index: 2;
   font-size: 30px;
   line-height: 40px;
   font-family: "SeasonMix-Regular";
+  max-width: 360px;
 }
 
 .about-right {
-  position: absolute;
-  top: 286px;
-  right: 141px;
-  width: 521px;
+  width: calc(50% - 80px);
   background-color: #fff;
   padding: 43px 45px 56px 71px;
   font-size: 16px;
   line-height: 24px;
   font-family: "SeasonSansTRIAL-Medium";
+  max-width: 520px;
+}
+
+.about_bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.about_bg img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  max-height: 875px;
 }
 
 #footer {
@@ -1929,13 +1942,17 @@ body.mobile-menu-lock {
   .intro-info {
     font-size: 28px;
   }
+  .about-box {
+    padding-left: 85px;
+    padding-right: 40px;
+  }
 
   .about-left {
-    left: 8%;
+    width: calc(50% - 38px);
   }
 
   .about-right {
-    right: 5%;
+    padding: 40px;
   }
 
   .intro-left-box svg {
@@ -2168,12 +2185,9 @@ body.mobile-menu-lock {
 
   .about-title {
     font-size: 56px;
-    height: 160px;
   }
 
   .about-left {
-    left: 10%;
-    max-width: 330px;
     font-size: 24px;
   }
 
@@ -2624,29 +2638,34 @@ body.mobile-menu-lock {
   .faq-title {
     font-size: 48px;
   }
+  .about-wrapper {
+    margin: auto;
+  }
 
   .about-title {
-    grid-column: 1/3;
-    height: fit-content;
-    padding: 30px;
-    border-top: 1px solid #000;
+    display: flex;
+    width: 100%;
+    padding: 32px 0;
+    align-items: center;
+  }
+
+  .about-box {
+    flex-direction: column;
+    gap: 30px 0;
   }
 
   .about-left {
-    top: 200px;
-    left: 50%;
-    transform: translate(-50%);
-    max-width: 400px;
-    height: auto;
-    padding: 20px;
+    width: 100%;
+    padding: 30px;
+    margin: 0 auto;
+    max-width: 480px;
+    font-size: 20px;
   }
 
   .about-right {
     width: 100%;
-    top: 450px;
-    right: 50%;
-    transform: translate(50%);
     padding: 30px;
+    margin: 0 auto;
   }
 
   #footer {
@@ -3018,8 +3037,8 @@ body.mobile-menu-lock {
       display: none;
     }
 
-    #about img {
-      display: none;
+    .about-box {
+      padding: 0;
     }
   }
 
@@ -3092,12 +3111,11 @@ body.mobile-menu-lock {
       padding: 0;
     }
 
-    #about {
-      height: 1700px;
+    .about-box {
+      padding: 0;
     }
 
     .about-right {
-      top: 500px;
       padding-bottom: 48px;
     }
 
