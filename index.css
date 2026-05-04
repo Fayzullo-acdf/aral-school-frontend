@@ -110,25 +110,13 @@ html {
 #navbar {
   width: 100%;
   position: fixed;
-  background-color: #fcf4eb;
+  background-color: #fcf4eb8c;
+  backdrop-filter: blur(12px);
   top: 0;
   left: 0;
   height: 156px;
   z-index: 10;
   transition: all 0.3s ease;
-}
-
-#navbar.scrolled {
-  background: rgba(252, 244, 235, 0.55);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-}
-
-#navbar.mobile-menu-open,
-#navbar.mobile-menu-open.scrolled {
-  background: #fcf4eb;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
 }
 
 .banner {
