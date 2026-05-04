@@ -598,17 +598,15 @@ html {
   top: 0;
   right: 0;
   max-width: 750px;
+  font-family: "SeasonSansTRIAL-Medium";
+  font-size: 16px;
+  line-height: 24px;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
   transition:
     opacity 0.2s ease,
     visibility 0.2s ease;
-}
-
-.modal-description p {
-  font-size: 16px;
-  line-height: 24px;
 }
 
 .modal.active .modal-description {
