@@ -1231,6 +1231,7 @@ html {
   font-size: 40px;
   line-height: 44px;
   font-family: "SeasonMix-Regular";
+  text-transform: uppercase;
 }
 
 .leader-title {
@@ -1326,6 +1327,7 @@ html {
   font-size: 40px;
   line-height: 44px;
   font-family: "SeasonMix-Regular";
+  text-transform: uppercase;
 }
 
 .rest-member-position {
@@ -1459,6 +1461,8 @@ html {
   padding-left: 0;
   text-align: left;
   width: 336px;
+  max-width: 300px;
+  text-transform: uppercase;
 }
 
 .mentors_content {
@@ -1962,11 +1966,7 @@ body.mobile-menu-lock {
 
 @media (max-width: 1600px) {
   .theme-card-left {
-    width: 40%;
-  }
-
-  .theme-card-right {
-    width: 40%;
+    padding-left: 50px;
   }
 
   .image-card {
